@@ -1,0 +1,135 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 44 27% 96%;
+    --foreground: 20 10% 5%;
+
+    --card: 44 27% 96%;
+    --card-foreground: 20 10% 5%;
+
+    --popover: 44 27% 96%;
+    --popover-foreground: 20 10% 5%;
+
+    --primary: 20 10% 5%;
+    --primary-foreground: 44 27% 96%;
+
+    --secondary: 36 25% 63%;
+    --secondary-foreground: 20 10% 5%;
+
+    --muted: 44 10% 90%;
+    --muted-foreground: 20 5% 40%;
+
+    --accent: 36 25% 63%;
+    --accent-foreground: 20 10% 5%;
+
+    --destructive: 0 85% 60%;
+    --destructive-foreground: 44 27% 96%;
+
+    --border: 36 10% 80%;
+    --input: 36 10% 80%;
+    --ring: 36 25% 63%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 20 10% 10%;
+    --foreground: 44 20% 90%;
+
+    --card: 20 10% 10%;
+    --card-foreground: 44 20% 90%;
+
+    --popover: 20 10% 10%;
+    --popover-foreground: 44 20% 90%;
+
+    --primary: 44 20% 90%;
+    --primary-foreground: 20 10% 10%;
+
+    --secondary: 36 15% 40%;
+    --secondary-foreground: 44 20% 90%;
+
+    --muted: 20 10% 20%;
+    --muted-foreground: 36 5% 65%;
+
+    --accent: 36 15% 40%;
+    --accent-foreground: 44 20% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 44 20% 90%;
+
+    --border: 20 10% 20%;
+    --input: 20 10% 20%;
+    --ring: 36 15% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-serif bg-paper-texture;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .newspaper-container {
+    @apply container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .section-title {
+    @apply font-heading font-bold text-3xl md:text-4xl border-b-2 border-newspaper-black dark:border-newspaper-white pb-2 mb-6;
+  }
+  
+  .newspaper-border {
+    @apply border border-newspaper-gray dark:border-newspaper-gray/50 shadow-md;
+  }
+  
+  .newspaper-column {
+    @apply relative first-letter:text-4xl first-letter:font-bold first-letter:float-left first-letter:mr-1;
+  }
+  
+  .newspaper-card {
+    @apply newspaper-border bg-newspaper-white dark:bg-newspaper-black p-6 rounded-sm;
+  }
+  
+  .article-title {
+    @apply font-heading font-bold text-xl md:text-2xl mb-2;
+  }
+  
+  .article-lead {
+    @apply text-base md:text-lg font-medium mb-4;
+  }
+  
+  .decorative-divider {
+    @apply relative flex items-center py-4;
+  }
+  
+  .decorative-divider::before,
+  .decorative-divider::after {
+    @apply content-[''] flex-1 border-t border-newspaper-black dark:border-newspaper-white;
+  }
+  
+  .decorative-divider::before {
+    @apply mr-4;
+  }
+  
+  .decorative-divider::after {
+    @apply ml-4;
+  }
+}
